@@ -10,3 +10,19 @@ document.getElementById('change-text').addEventListener('click', () => {
 
 title.style.color = 'blue';
 paragraph.style.fontsize = '18px';
+
+title.classList.add('highlight');
+setTimeout(() => title.classList.remove('highlight'), 2000);
+
+document.getElementById('add-item').addEventListener('click', () => {
+    const newItem = document.createElement('li');
+    newItem.className = 'item';
+    newItem.textContent = `Item ${list.children.length + 1}`;
+    list.appendChild(newItem);
+});
+
+document.getElementById('remove-item').addEventListener('click', () => {
+    if (list.lastElementChild) {
+        list.removeChild(list.lastElementChild)
+    }
+});
