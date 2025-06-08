@@ -26,3 +26,17 @@ document.getElementById('remove-item').addEventListener('click', () => {
         list.removeChild(list.lastElementChild)
     }
 });
+
+title.setAttribute('title', 'This is the main title');
+
+console.log(title.getAttribute('id'));
+console.log(list.children);
+
+const clone = paragraph.cloneNode(true);
+document.body.appendChild(clone);
+
+list.addEventListener('click', (e) => {
+    if (e.target.matches('li')) {
+        alert(`You clicked on: ${e.target.textContent}`);
+    }
+});
